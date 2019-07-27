@@ -1,4 +1,4 @@
-service: wkhtmltopdf
+service: pdf
 
 provider:
     name: aws
@@ -10,7 +10,7 @@ plugins:
     - ./vendor/bref/bref
 
 functions:
-    convert:
+    html-to-pdf:
         handler: index.php
         description: 'HTML to PDF'
         layers:
