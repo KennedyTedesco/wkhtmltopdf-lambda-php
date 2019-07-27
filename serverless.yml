@@ -10,7 +10,7 @@ plugins:
     - ./vendor/bref/bref
 
 functions:
-    html-to-pdf:
+    from-html:
         handler: index.php
         description: 'HTML to PDF'
         layers:
