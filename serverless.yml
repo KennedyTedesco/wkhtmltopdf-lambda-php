@@ -1,0 +1,18 @@
+service: wkhtmltopdf
+
+provider:
+    name: aws
+    region: sa-east-1
+    runtime: provided
+    stage: prod
+
+plugins:
+    - ./vendor/bref/bref
+
+functions:
+    convert:
+        handler: index.php
+        description: 'HTML to PDF'
+        layers:
+            - ${bref:layer.php-73}
+            - 'arn:aws:lambda:sa-east-1:391960246434:layer:wkhtmltopdf-bin:1'

@@ -1,0 +1,13 @@
+{
+    "require": {
+        "ext-json": "*",
+        "bref/bref": "^0.5.0",
+        "knplabs/knp-snappy": "^1.1"
+    },
+    "scripts": {
+        "deploy": [
+            "composer install --optimize-autoloader --no-dev",
+            "serverless deploy"
+        ]
+    }
+}
