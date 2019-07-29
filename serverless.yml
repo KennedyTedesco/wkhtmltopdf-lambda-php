@@ -1,4 +1,4 @@
-service: pdf
+service: wkhtmltopdf
 
 provider:
     name: aws
@@ -10,9 +10,9 @@ plugins:
     - ./vendor/bref/bref
 
 functions:
-    from-html:
+    html-to-base64-pdf:
         handler: index.php
-        description: 'HTML to PDF'
+        description: 'HTML to Base64 PDF'
         layers:
             - ${bref:layer.php-73}
             - 'arn:aws:lambda:sa-east-1:391960246434:layer:wkhtmltopdf-bin:1'
