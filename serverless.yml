@@ -5,6 +5,8 @@ provider:
     region: sa-east-1
     runtime: provided
     stage: prod
+    memorySize: 1024
+    timeout: 60
 
 plugins:
     - ./vendor/bref/bref
