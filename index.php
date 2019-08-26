@@ -23,7 +23,7 @@ lambda(static function (array $event) {
     if (isset($event['options'])) {
         $options = \array_merge(
             $options,
-            \json_decode($event['options'] ?? '', true)
+            \json_decode($event['options'], true)
         );
     }
 
