@@ -5,7 +5,7 @@ provider:
     region: sa-east-1
     runtime: provided.al2
     stage: dev
-    memorySize: 2048
+    memorySize: 3072 # Change to yours needs
     lambdaHashingVersion: 20201221
     timeout: 29
 
