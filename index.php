@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-require __DIR__.'/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 use Knp\Snappy\Pdf;
 
-lambda(static function (array $event) {
-    $pdf = new Pdf('/opt/wkhtmltopdf');
+return function (array $event) {
+    $pdf = new Pdf('/opt/bin/wkhtmltopdf');
 
     $options = [
         'encoding' => 'utf-8',
@@ -34,4 +34,4 @@ lambda(static function (array $event) {
     }
 
     return \base64_encode($output);
-});
+};

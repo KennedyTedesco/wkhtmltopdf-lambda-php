@@ -3,10 +3,11 @@ service: wkhtmltopdf
 provider:
     name: aws
     region: sa-east-1
-    runtime: provided
-    stage: prod
-    memorySize: 2048
-    timeout: 30
+    runtime: provided.al2
+    stage: dev
+    memorySize: 3072 # Change to yours needs
+    lambdaHashingVersion: 20201221
+    timeout: 29
 
 plugins:
     - ./vendor/bref/bref
@@ -14,7 +15,10 @@ plugins:
 functions:
     html-to-base64-pdf:
         handler: index.php
+        environment:
+            FONTCONFIG_PATH: /opt/etc/fonts
         description: 'HTML to Base64 PDF'
         layers:
             - ${bref:layer.php-80}
-            - 'arn:aws:lambda:sa-east-1:391960246434:layer:wkhtmltopdf-bin:1'
+            - 'arn:aws:lambda:sa-east-1:347599033421:layer:wkhtmltopdf-0_12_6:1'
+            - 'arn:aws:lambda:sa-east-1:347599033421:layer:amazon_linux_fonts:1'
