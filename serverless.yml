@@ -4,8 +4,8 @@ provider:
     name: aws
     region: sa-east-1
     runtime: provided.al2
-    stage: dev
-    memorySize: 3072 # Change to yours needs
+    stage: prod
+    memorySize: 3072 # Change to your needs
     lambdaHashingVersion: 20201221
     timeout: 29
 
