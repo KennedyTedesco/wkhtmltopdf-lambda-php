@@ -1,8 +1,8 @@
 {
     "require": {
         "ext-json": "*",
-        "bref/bref": "^0.5.0",
-        "knplabs/knp-snappy": "^1.1"
+        "bref/bref": "^1.2",
+        "knplabs/knp-snappy": "^1.2"
     },
     "scripts": {
         "deploy": [

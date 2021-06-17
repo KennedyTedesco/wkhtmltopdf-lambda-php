@@ -3,10 +3,11 @@ service: wkhtmltopdf
 provider:
     name: aws
     region: sa-east-1
-    runtime: provided
+    runtime: provided.al2
     stage: prod
     memorySize: 2048
-    timeout: 30
+    lambdaHashingVersion: 20201221
+    timeout: 29
 
 plugins:
     - ./vendor/bref/bref
@@ -16,5 +17,5 @@ functions:
         handler: index.php
         description: 'HTML to Base64 PDF'
         layers:
-            - ${bref:layer.php-74}
+            - ${bref:layer.php-80}
             - 'arn:aws:lambda:sa-east-1:391960246434:layer:wkhtmltopdf-bin:1'
