@@ -7,7 +7,7 @@ require __DIR__ . '/vendor/autoload.php';
 use Knp\Snappy\Pdf;
 
 return function (array $event) {
-    $pdf = new Pdf('/opt/wkhtmltopdf');
+    $pdf = new Pdf('/opt/bin/wkhtmltopdf');
 
     $options = [
         'encoding' => 'utf-8',
