@@ -15,7 +15,10 @@ plugins:
 functions:
     html-to-base64-pdf:
         handler: index.php
+        environment:
+            FONTCONFIG_PATH: /opt/etc/fonts
         description: 'HTML to Base64 PDF'
         layers:
             - ${bref:layer.php-80}
             - 'arn:aws:lambda:sa-east-1:347599033421:layer:wkhtmltopdf-0_12_6:1'
+            - 'arn:aws:lambda:sa-east-1:347599033421:layer:amazon_linux_fonts:1'
