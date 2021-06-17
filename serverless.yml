@@ -4,7 +4,7 @@ provider:
     name: aws
     region: sa-east-1
     runtime: provided.al2
-    stage: prod
+    stage: dev
     memorySize: 2048
     lambdaHashingVersion: 20201221
     timeout: 29
@@ -18,4 +18,4 @@ functions:
         description: 'HTML to Base64 PDF'
         layers:
             - ${bref:layer.php-80}
-            - 'arn:aws:lambda:sa-east-1:391960246434:layer:wkhtmltopdf-bin:1'
+            - 'arn:aws:lambda:sa-east-1:347599033421:layer:wkhtmltopdf-0_12_6:1'
